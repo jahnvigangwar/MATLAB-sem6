@@ -15,6 +15,7 @@ BV = [];
 for j=1:size(s,2)
     for i=1:size(A,2)
         if A(:,i)==s(:,j)
+        
             BV = [BV i];
         end
     end
