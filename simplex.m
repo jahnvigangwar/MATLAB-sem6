@@ -20,9 +20,10 @@ simpleTable.Properties.VariableNames(1:size(tbl,2))={'x_1', 'x_2', 'x_3', 's_1',
 
 RUN = true;
 while RUN
-    if any(zjcj < 0)
+    zc = zjcj(1:end-1);
+    if any(zc < 0)
         fprintf('Current BFS is not optimal')
-        zc = zjcj(1:end-1);
+%         zc = zjcj(1:end-1);
         [pvt_cval, pvt_cindx] = min(zc);
     
         column = A(:,pvt_cindx);
