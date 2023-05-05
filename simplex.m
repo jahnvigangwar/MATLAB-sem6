@@ -1,3 +1,4 @@
+%simplex Method: Jahnvi Gangwar_102003372
 format short 
 clear all 
 clc
@@ -16,7 +17,7 @@ BV = NoofVariables+1 : size(A,2)-1;
 zjcj = Cost(BV)*A - Cost;
 tbl = [zjcj; A];
 simpleTable = array2table(tbl);
-simpleTable.Properties.VariableNames(1:size(tbl,2))={'x_1', 'x_2', 'x_3', 's_1', 's_2', 's_3', 'sol'};
+simpleTable.Properties.VariableNames(1:size(tbl,2))={'x_1', 'x_2', 'x_3', 's_1', 's_2', 's_3', 'sol'}
 
 RUN = true;
 while RUN
@@ -54,7 +55,7 @@ while RUN
             end
             zjcj = zjcj - zjcj(pvt_cindx).*A(pvt_rindx,:);
 
-             [zjcj; A]
+             [zjcj; A];
         end
     
     else
@@ -65,3 +66,6 @@ while RUN
     end
 end
 
+tbl = [zjcj; A];
+finalTable = array2table(tbl);
+finalTable.Properties.VariableNames(1:size(tbl,2))={'x_1', 'x_2', 'x_3', 's_1', 's_2', 's_3', 'sol'}
